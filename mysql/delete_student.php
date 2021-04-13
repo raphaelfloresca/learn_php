@@ -3,14 +3,14 @@
     // Validate the input from the post method
     $student_id = filter_input(INPUT_POST, "student-id", FILTER_VALIDATE_INT);
     
-    // Check that all values have been entered, including student_id
+    // Check that student_id has been entered
     if ($student_id == null) {
         $err_msg = "All Values Not Entered<br>";
         include('db_error.php');
     } else {
         // Check if already included
         require_once('db_connect.php');
-        // SQL query to update values into the corresponding columns of the students database
+        // SQL query to delete the corresponding row of the students database
         $query = 'DELETE from students WHERE student_id = :student_id';
 
         // Create an object based on the db class and prepare the query variable for binding
