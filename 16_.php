@@ -105,7 +105,7 @@
         }
 
         // Interfaces are used to allow child classes to inherit properties from other classes
-        interface SIngable {
+        interface Singable {
             public function sing();
         }
 
